@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Player
+  - Environment
+  - Confinement
+  - Enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 1005706171
+    locked: 0
+  - name: Midground
+    uniqueID: 452805415
+    locked: 0
+  - name: BackPath
+    uniqueID: 4094240241
+    locked: 0
+  - name: Entities
+    uniqueID: 3729014505
+    locked: 0
+  - name: Path
+    uniqueID: 591262357
+    locked: 0
+  - name: Foreground
+    uniqueID: 4018131883
+    locked: 0
