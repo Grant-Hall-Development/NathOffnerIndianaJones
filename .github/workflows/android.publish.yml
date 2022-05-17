@@ -1,3 +1,5 @@
+name: Publish Android
+
 on:
   workflow_call:
     secrets:
