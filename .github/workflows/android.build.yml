@@ -22,8 +22,6 @@ on:
         required: true
         type: string
 
-env:
-  UNITY_LICENSE: ${{ secrets.unity_license }}
 jobs:
   buildAndroid:
     name: Build for Android 📱
