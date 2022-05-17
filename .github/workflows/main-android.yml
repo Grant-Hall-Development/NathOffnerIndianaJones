@@ -1,0 +1,22 @@
+name: Build & Release Android
+
+on: [workflow_dispatch]
+
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  buildAndroid:
+    uses: ./.github/workflows/actions/android.build.yml
+    secrets:
+      unity_license: ${{ secrets.UNITY_LICENSE }}
+      keystore_file: ${{ secrets.KEYSTORE_FILE }}
+      keystore_password: ${{ secrets.KEYSTORE_PASSWORD }}
+      keystore_alias: ${{ secrets.KEYSTORE_ALIAS }}
+      keystore_alias_password: ${{ secrets.KEYSTORE_ALIAS_PASSWORD }}
+  releaseToGooglePlay:
+    uses: ./.github/workflows/actions/android.publish.yml
+    secrets:
+      google_play_key_file: ${{ secrets.GOOGLE_PLAY_KEY_FILE }}
+      android_package_name: ${{ secrets.ANDROID_PACKAGE_NAME }}
+    
