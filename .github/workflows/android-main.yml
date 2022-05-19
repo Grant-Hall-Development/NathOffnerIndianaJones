@@ -42,7 +42,7 @@ jobs:
         with:
           targetPlatform: Android
           androidAppBundle: true
-          androidKeystoreName: user.keystore
+          androidKeystoreName: NathanOffner.keystore
           androidKeystoreBase64: ${{ secrets.KEYSTORE_FILE }}
           androidKeystorePass: ${{ secrets.KEYSTORE_PASSWORD }}
           androidKeyaliasName: ${{ secrets.KEYSTORE_ALIAS }}
