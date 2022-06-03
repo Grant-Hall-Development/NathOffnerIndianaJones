@@ -27,7 +27,6 @@ public class UIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
 
     public void Update()
     {
-        print("This is a button");
         if (!canHold) return;
 
         if (!isHoldingDown) return;
@@ -48,6 +47,7 @@ public class UIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public void OnPointerUp(PointerEventData eventData)
     {
         OnButtonUp?.Invoke();
+        print("Pointer released");
         buttonImage.sprite = buttonStateSprites[0];
         buttonImage.DOFade(1,0.1f);
         isHoldingDown = false;
@@ -56,6 +56,7 @@ public class UIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, I
     public void OnPointerExit(PointerEventData eventData)
     {
         OnButtonUp?.Invoke();
+        print("Pointer Exit");
         buttonImage.sprite = buttonStateSprites[0];
         buttonImage.DOFade(1, 0.1f);
 

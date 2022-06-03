@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class BossManager : MonoBehaviour
 {
+    public GameObject mobileControls;
+
     public StoryPage bossEntryStory;
     public StoryPage bossDefeatedStory;
     public GameObject finalStory;
@@ -37,6 +39,7 @@ public class BossManager : MonoBehaviour
     {
         FindObjectOfType<StartTransitionController>().StartTransition();
         AudioManager.Instance.PlayTrack("BossTrack");
+        mobileControls.SetActive(false);
     }
 
     public void TriggerBossEntry()
@@ -46,6 +49,8 @@ public class BossManager : MonoBehaviour
 
     public void CheckEnding()
     {
+        
+        mobileControls.SetActive(false);
         if (Convert.ToInt32(PlayerDataGetter.Instance.GetReadDataAtKey(PlayerConstants.BossEndingValue)) == 1)
             TriggerBossLeavingWithoutIdol();
         else
@@ -61,11 +66,12 @@ public class BossManager : MonoBehaviour
         playerController.PlayerRotation(1);
         playerController.isOverrideActive = true;
         playerController.ForceStopMovement();
-
+        mobileControls.SetActive(false);
     }
 
     public void TriggerBossLeaving()
     {
+        mobileControls.SetActive(false);
         PlayerController playerController = FindObjectOfType<PlayerController>();
 
         boss.ForceMovementWithoutMovement(-1);

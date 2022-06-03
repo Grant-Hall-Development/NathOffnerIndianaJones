@@ -35,10 +35,12 @@ MonoBehaviour:
     - 2DHandPainted
     - Cinemachine
     - Sirenix.OdinInspector.CompatibilityLayer
+    - IngameDebugConsole.Runtime
     - 2DHandPaintedEditor
     - PsdPlugin
     - Sirenix.OdinInspector.CompatibilityLayer.Editor
     - PlayFabEditorExtensions
+    - IngameDebugConsole.Editor
     - PlayFabSDKEditor
     - Sirenix.OdinInspector.Modules.UnityMathematics
     showAdvancedSettings: 0

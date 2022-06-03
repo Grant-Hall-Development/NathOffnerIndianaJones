@@ -1,7 +1,7 @@
 using UnityEngine;
 
 #if ENABLE_INPUT_SYSTEM
-using UnityEngine.InputSystem;
+//using UnityEngine.InputSystem;
 #endif
 
 // Based on Unity’s URP Template’s controller
@@ -11,7 +11,7 @@ namespace NotSlot.HandPainted2D
   [AddComponentMenu("2D Hand Painted/Camera Controller")]
   public sealed partial class CameraController : MonoBehaviour
   {
-    #region Inspector
+   /* #region Inspector
 
     [Header("Movement Settings")]
     [SerializeField,
@@ -70,7 +70,7 @@ namespace NotSlot.HandPainted2D
     private readonly State _interpolatingState = new State();
 
 #if ENABLE_INPUT_SYSTEM
-    private InputAction _movementAction;
+    /*private InputAction _movementAction;
 
     private InputAction _verticalMovementAction;
 
@@ -301,6 +301,6 @@ namespace NotSlot.HandPainted2D
 #endif
     }
 
-    #endregion
+    #endregion*/
   }
 }
