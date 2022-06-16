@@ -146,11 +146,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-<<<<<<< HEAD
-    Android: com.DefaultCompany.NathanOffnerIndianaJonesGame
-=======
     Android: com.NathanOffner.ExecGamesAdventure
->>>>>>> f51b500839606b4011b849934c2ef16a927a7662
     iPhone: com.NathanOffner.ExecGamesAdventure
   buildNumber:
     Standalone: 0
@@ -243,13 +239,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 2
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-<<<<<<< HEAD
-  AndroidKeystoreName: C:/Users/Jordan/Documents/@UnityProjects/Keystores/NathanOffner.keystore
-  AndroidKeyaliasName: adventuregame
-=======
   AndroidKeystoreName: '{inproject}: NathanOffner.keystore'
   AndroidKeyaliasName: 
->>>>>>> f51b500839606b4011b849934c2ef16a927a7662
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1

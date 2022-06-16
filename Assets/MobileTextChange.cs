@@ -6,7 +6,7 @@ using UnityEngine;
 public class MobileTextChange : MonoBehaviour
 {
     TextMeshProUGUI text;
-
+    
     private void Awake()
     {
         text = GetComponent<TextMeshProUGUI>();
