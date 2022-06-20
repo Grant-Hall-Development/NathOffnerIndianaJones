@@ -28,7 +28,7 @@ jobs:
           APP_STORE_CONNECT_KEY: ${{ secrets.APPSTORE_P8 }} # Raw .p8 value
           APP_STORE_CONNECT_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
 
-          BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
+          IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
 
           GH_PAT: ${{ secrets.GH_PAT }}
           GH_REPOSITORY: ${{ env.GH_REPOSITORY }}
