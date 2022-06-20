@@ -54,8 +54,8 @@ jobs:
           APPSTORE_P8: ${{ secrets.APPSTORE_P8 }}
 
           IOS_BUILD_PATH: ${{ format('{0}/build/iOS', github.workspace) }}
-          IOS_BUNDLE_ID: com.company.application # Change it to match your Unity bundle id
-          PROJECT_NAME: Your Project Name # Change it to match your project's name
+          IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }} # Change it to match your Unity bundle id
+          PROJECT_NAME: Exec Games Adventure # Change it to match your project's name
         run: |
           find $IOS_BUILD_PATH -type f -name "**.sh" -exec chmod +x {} \;
           bundle install
