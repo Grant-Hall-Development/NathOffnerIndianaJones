@@ -22,5 +22,5 @@ jobs:
           APP_STORE_CONNECT_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
 
           GH_PAT: ${{ secrets.GH_PAT }}
-          GH_REPOSITORY: ${{ env.GH_REPOSITORY }}
+          GH_REPOSITORY: ${{ secrets.GH_REPOSITORY }}
           MATCH_REPOSITORY: ${{ secrets.MATCH_REPOSITORY }}
