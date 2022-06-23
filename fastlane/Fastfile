@@ -4,6 +4,7 @@ keychain_password = SecureRandom.base64
 
 org, repo = (ENV["GH_REPOSITORY"]||"").split("/")
 match_org, match_repo = (ENV["MATCH_REPOSITORY"]||"").split("/")
+pat = ENV["GH_PAT]
 
 platform :android do
   desc "Upload a new Android version to the Google Play Store"
@@ -39,7 +40,7 @@ platform :ios do
     match(
       type: "appstore",
       storage_mode: "git",
-      git_url: "kbapplications:#{ENV["GH_PAT"}@github.com:#{match_org}/#{match_repo}.git",
+      git_url: "kbapplications:#{ENV["GH_PAT"]}@github.com:#{match_org}/#{match_repo}.git",
       app_identifier: ENV["IOS_BUNDLE_ID"]
     )
   end
@@ -76,7 +77,7 @@ platform :ios do
     match(
       type: 'appstore',
       storage_mode: 'git',
-      git_url: "kbapplications:#{ENV["GH_PAT"}@github.com:#{match_org}/#{match_repo}.git",
+      git_url: "kbapplications:#{ENV["GH_PAT"]}@github.com:#{match_org}/#{match_repo}.git",
       app_identifier: ENV['IOS_BUNDLE_ID']
     )
 
