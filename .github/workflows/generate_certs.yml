@@ -24,9 +24,9 @@ jobs:
           ssh-add - <<< "${MATCH_DEPLOY_KEY}"
           bundle exec fastlane ios sync_certificates
         env:
-          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APPSTORE_ISSUER_ID }}
-          APP_STORE_CONNECT_KEY: ${{ secrets.APPSTORE_P8 }} # Raw .p8 value
-          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
+          APPSTORE_ISSUER_ID: ${{ secrets.APPSTORE_ISSUER_ID }}
+          APPSTORE_P8: ${{ secrets.APPSTORE_P8 }} # Raw .p8 value
+          APPSTORE_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
 
           IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
 
