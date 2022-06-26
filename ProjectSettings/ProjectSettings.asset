@@ -146,8 +146,8 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.NathanOffner.ExecGamesAdventure
-    iPhone: com.NathanOffner.ExecGamesAdventure
+    Android: com.DefaultCompany.NathanOffnerIndianaJonesGame
+    iPhone: com.DefaultCompany.NathanOffnerIndianaJonesGame
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -259,7 +259,114 @@ PlayerSettings:
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
   m_BuildTargetIcons: []
-  m_BuildTargetPlatformIcons: []
+  m_BuildTargetPlatformIcons:
+  - m_BuildTarget: iPhone
+    m_Icons:
+    - m_Textures:
+      - {fileID: 2800000, guid: 86efa15e8bf86d1489b7ff7742eeb1ed, type: 3}
+      m_Width: 180
+      m_Height: 180
+      m_Kind: 0
+      m_SubKind: iPhone
+    - m_Textures:
+      - {fileID: 2800000, guid: 90460068b80ecca438209cb112385801, type: 3}
+      m_Width: 120
+      m_Height: 120
+      m_Kind: 0
+      m_SubKind: iPhone
+    - m_Textures:
+      - {fileID: 2800000, guid: e44ac6db3525c31409fd800ddecbdb1e, type: 3}
+      m_Width: 167
+      m_Height: 167
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 2800000, guid: 75f8f94f7534343489589a38c3cbf0ac, type: 3}
+      m_Width: 152
+      m_Height: 152
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 2800000, guid: b5b11aa337aa08e489ec7fe374dc2682, type: 3}
+      m_Width: 76
+      m_Height: 76
+      m_Kind: 0
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 87
+      m_Height: 87
+      m_Kind: 1
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 58
+      m_Height: 58
+      m_Kind: 1
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 29
+      m_Height: 29
+      m_Kind: 1
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 58
+      m_Height: 58
+      m_Kind: 1
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 29
+      m_Height: 29
+      m_Kind: 1
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 60
+      m_Height: 60
+      m_Kind: 2
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 2
+      m_SubKind: iPhone
+    - m_Textures: []
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 2
+      m_SubKind: iPad
+    - m_Textures: []
+      m_Width: 20
+      m_Height: 20
+      m_Kind: 2
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 2800000, guid: 0bba6fef814334040af23c5d251db074, type: 3}
+      m_Width: 1024
+      m_Height: 1024
+      m_Kind: 4
+      m_SubKind: App Store
+    - m_Textures:
+      - {fileID: 2800000, guid: 3bc933f71cdb0e24caa94d2722b5c604, type: 3}
+      m_Width: 120
+      m_Height: 120
+      m_Kind: 3
+      m_SubKind: iPhone
+    - m_Textures:
+      - {fileID: 2800000, guid: 6ab9c7ca6b3ca1d43b384028806da401, type: 3}
+      m_Width: 80
+      m_Height: 80
+      m_Kind: 3
+      m_SubKind: iPhone
+    - m_Textures:
+      - {fileID: 2800000, guid: 6ab9c7ca6b3ca1d43b384028806da401, type: 3}
+      m_Width: 80
+      m_Height: 80
+      m_Kind: 3
+      m_SubKind: iPad
+    - m_Textures:
+      - {fileID: 2800000, guid: 513c45461fac5104995577a97203f2f2, type: 3}
+      m_Width: 40
+      m_Height: 40
+      m_Kind: 3
+      m_SubKind: iPad
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsJobs:
   - m_BuildTarget: MacStandaloneSupport
@@ -552,6 +659,7 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     1: ODIN_INSPECTOR;ODIN_INSPECTOR_3
+    4: ODIN_INSPECTOR;ODIN_INSPECTOR_3
     7: ODIN_INSPECTOR;ODIN_INSPECTOR_3
     13: ODIN_INSPECTOR;ODIN_INSPECTOR_3
   additionalCompilerArguments: {}
