@@ -1,8 +1,8 @@
 # fastlane/Fastfile
-keychain_name = "temporary_keychain"
-keychain_password = SecureRandom.base64
+#keychain_name = "temporary_keychain"
+#keychain_password = SecureRandom.base64
 
-org, repo = (ENV["GITHUB_REPOSITORY"]||"").split("/")
+org, repo = (ENV["GH_REPOSITORY"]||"").split("/")
 match_org, match_repo = (ENV["MATCH_REPOSITORY"]||"").split("/")
 
 platform :android do
@@ -31,22 +31,37 @@ platform :ios do
   desc "Set up codesigning"
   lane :sync_certificates do
     app_store_connect_api_key(
-      key_id: ENV["APP_STORE_CONNECT_KEY_ID"],
-      issuer_id: ENV["APP_STORE_CONNECT_ISSUER_ID"],
-      key_content: ENV['APP_STORE_CONNECT_KEY']
+      key_id: ENV["APPSTORE_KEY_ID"],
+      issuer_id: ENV["APPSTORE_ISSUER_ID"],
+      key_content: ENV['APPSTORE_P8']
     )
 
     match(
       type: "appstore",
       storage_mode: "git",
       git_url: "git@github.com:#{match_org}/#{match_repo}.git",
-      app_identifier: ENV["BUNDLE_ID"]
+      app_identifier: ENV["IOS_BUNDLE_ID"]
     )
   end
   
   desc "Deliver a new Release build to the App Store"
   lane :release do
+    # Missing Export Compliance can also be set through Deliverfile
+    update_info_plist(
+      xcodeproj: "#{ENV['IOS_BUILD_PATH']}/iOS/Unity-iPhone.xcodeproj",
+      plist_path: 'Info.plist',
+      block: proc do |plist|
+        plist['ITSAppUsesNonExemptEncryption'] = false
+      end
+    )
     build
+	update_info_plist(
+      xcodeproj: "#{ENV['IOS_BUILD_PATH']}/iOS/Unity-iPhone.xcodeproj",
+      plist_path: 'Info.plist',
+      block: proc do |plist|
+        plist['ITSAppUsesNonExemptEncryption'] = false
+      end
+    )
     upload_to_app_store
   end
 
@@ -76,7 +91,7 @@ platform :ios do
     match(
       type: 'appstore',
       storage_mode: 'git',
-      git_url: "git@github.com:#{match_org}/#{match_repo}.git",
+      git_url: "https://kbapplications:#{ENV["GH_PAT"]}@github.com/#{match_org}/#{match_repo}.git",
       app_identifier: ENV['IOS_BUNDLE_ID']
     )
 
@@ -100,7 +115,7 @@ platform :ios do
     build_app( #alias: gym
       project: "#{ENV['IOS_BUILD_PATH']}/iOS/Unity-iPhone.xcodeproj",
       scheme: 'Unity-iPhone',
-      xcargs: '-allowProvisioningUpdates'
+      xcargs: '-allowProvisioningUpdates -UseNewBuildSystem=YES'
     )
   end
 

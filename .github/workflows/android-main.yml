@@ -41,6 +41,7 @@ jobs:
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: Android
+          versioning: Tag
           androidAppBundle: true
           androidKeystoreName: NathanOffner.keystore
           androidKeystoreBase64: ${{ secrets.KEYSTORE_FILE }}

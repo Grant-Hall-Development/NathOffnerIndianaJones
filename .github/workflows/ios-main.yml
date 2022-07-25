@@ -20,6 +20,7 @@ jobs:
       - uses: game-ci/unity-builder@v2
         with:
           targetPlatform: iOS
+          versioning: Tag
 
       - uses: actions/upload-artifact@v2
         with:
@@ -46,6 +47,8 @@ jobs:
           APPLE_DEVELOPER_EMAIL: ${{ secrets.APPLE_DEVELOPER_EMAIL }}
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
 
+          GH_PAT: ${{ secrets.GH_PAT }}
+          GH_REPOSITORY: ${{ secrets.GH_REPOSITORY }}
           MATCH_REPOSITORY: ${{ secrets.MATCH_REPOSITORY }}
           MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
 
@@ -54,12 +57,12 @@ jobs:
           APPSTORE_P8: ${{ secrets.APPSTORE_P8 }}
 
           IOS_BUILD_PATH: ${{ format('{0}/build/iOS', github.workspace) }}
-          IOS_BUNDLE_ID: com.company.application # Change it to match your Unity bundle id
-          PROJECT_NAME: Your Project Name # Change it to match your project's name
+          IOS_BUNDLE_ID: ${{ secrets.IOS_BUNDLE_ID }}
+          PROJECT_NAME: Exec Games Adventure
         run: |
           find $IOS_BUILD_PATH -type f -name "**.sh" -exec chmod +x {} \;
           bundle install
-          bundle exec fastlane ios release
+          bundle exec fastlane ios beta
 
       - name: Cleanup to avoid storage limit
         if: always()

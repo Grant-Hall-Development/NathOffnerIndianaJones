@@ -17,10 +17,10 @@ jobs:
         run: |
           bundle exec fastlane ios init_ci
         env:
-          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_ISSUER_ID }}
-          APP_STORE_CONNECT_KEY: ${{ secrets.APP_STORE_CONNECT_KEY }} # Raw .p8 value
-          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APP_STORE_CONNECT_KEY_ID }}
+          APP_STORE_CONNECT_ISSUER_ID: ${{ secrets.APPSTORE_ISSUER_ID }}
+          APP_STORE_CONNECT_KEY: ${{ secrets.APPSTORE_P8 }} # Raw .p8 value
+          APP_STORE_CONNECT_KEY_ID: ${{ secrets.APPSTORE_KEY_ID }}
 
           GH_PAT: ${{ secrets.GH_PAT }}
-          GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
+          GH_REPOSITORY: ${{ secrets.GH_REPOSITORY }}
           MATCH_REPOSITORY: ${{ secrets.MATCH_REPOSITORY }}
