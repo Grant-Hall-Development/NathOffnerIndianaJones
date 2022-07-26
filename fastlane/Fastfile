@@ -1,6 +1,6 @@
 # fastlane/Fastfile
-#keychain_name = "temporary_keychain"
-#keychain_password = SecureRandom.base64
+keychain_name = "temporary_keychain"
+keychain_password = SecureRandom.base64
 
 org, repo = (ENV["GH_REPOSITORY"]||"").split("/")
 match_org, match_repo = (ENV["MATCH_REPOSITORY"]||"").split("/")
