@@ -11,7 +11,7 @@ using UnityEngine;
 public class LoginPage : MonoBehaviour
 {
     public TMP_InputField nameInput;
-
+    public CustomButton forceLoginButton;
     public CustomButton loginButton;
     public CustomButton registerButton;
 
@@ -36,6 +36,7 @@ public class LoginPage : MonoBehaviour
 
     public void SetupButtons()
     {
+        forceLoginButton.SetupButton(ForceLoginRequest);
         loginButton.SetupButton(LoginRequest);
         registerButton.SetupButton(RegisterRequest);
     }
@@ -48,6 +49,26 @@ public class LoginPage : MonoBehaviour
         {
             TitleId = PlayFabSettings.TitleId,
             CustomId = nameInput.text,
+            InfoRequestParameters = loginParams
+        }, (result) =>
+        {
+            ActiveLoginDetails.SetEntityDetails(result);
+            ApplicationManager.TriggerLoginSuccessful(result);
+            Pr.Log("Logged in");
+        }, (error) =>
+        {
+            ApplicationManager.ToggleApplicationProcessing(false);
+            Pr.Error(error.ErrorMessage);
+        });
+    }
+    public void ForceLoginRequest()
+    {
+        ApplicationManager.ToggleApplicationProcessing(true);
+
+        PlayFabClientAPI.LoginWithCustomID(new LoginWithCustomIDRequest()
+        {
+            TitleId = PlayFabSettings.TitleId,
+            CustomId = "Hugo First",
             InfoRequestParameters = loginParams
         }, (result) =>
         {

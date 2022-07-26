@@ -29,9 +29,9 @@ MonoBehaviour:
     referenceMode: 2
     serializationDepthLimit: 64
     assemblyNames:
+    - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - PlayFab
-    - Assembly-CSharp
     - 2DHandPainted
     - Cinemachine
     - Sirenix.OdinInspector.CompatibilityLayer
