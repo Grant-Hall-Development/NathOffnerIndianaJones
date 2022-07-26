@@ -89,10 +89,10 @@ platform :ios do
     )
 
     match(
-      type: 'appstore',
-      storage_mode: 'git',
-      git_url: "https://kbapplications:#{ENV["GH_PAT"]}@github.com/#{match_org}/#{match_repo}.git",
-      app_identifier: ENV['IOS_BUNDLE_ID']
+      type: "appstore",
+      storage_mode: "git",
+      git_url: "git@github.com:#{match_org}/#{match_repo}.git",
+      app_identifier: ENV["IOS_BUNDLE_ID"]
     )
 
     # Unity has specific requirements around codesigning that we have to handle
