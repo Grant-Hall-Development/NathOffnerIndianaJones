@@ -7,8 +7,9 @@ To create a new release and push to both mobile stores take the following steps:
 4. Select the store to release
  * For Android select "Release Android"
  * For iOS select "Release iOS"
-5. Press "Run workflow"
+5. Press "Run workflow", this will give you a submenu
 6. Select the tag you just created
+7. Press the green button saying "Run workflow", this will trigger the selected action
 
 # Contact
 For further questions feel free to contact me at Discord; Thrashy#0518 or by email; info@kbapplications.nl
