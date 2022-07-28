@@ -59,6 +59,7 @@ public class BossManager : MonoBehaviour
 
     public void TriggerBossDefeat()
     {
+        print("This got called");
         bossDefeatedStory.gameObject.SetActive(true);
         bossTransform.position = bossStartTransform.position;
         playerTransform.position = playerStartTransform.position;
@@ -73,6 +74,7 @@ public class BossManager : MonoBehaviour
     {
         mobileControls.SetActive(false);
         PlayerController playerController = FindObjectOfType<PlayerController>();
+        playerController.isOverrideActive = true;
 
         boss.ForceMovementWithoutMovement(-1);
         bossTransform.DOMove(bossCollectArtifactTransform.position, 0.5f).SetEase(Ease.Linear).OnComplete(() =>
