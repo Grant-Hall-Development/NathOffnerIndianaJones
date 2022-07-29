@@ -26,12 +26,12 @@ public class BossManager : MonoBehaviour
     public void OnEnable()
     {
 
-        Boss.OnBossDefeated += CheckEnding;
+        Boss.OnBossDefeated += CheckForDefeatStory;
     }
 
     private void OnDisable()
     {
-        Boss.OnBossDefeated -= CheckEnding;
+        Boss.OnBossDefeated -= CheckForDefeatStory;
 
     }
 
@@ -45,6 +45,21 @@ public class BossManager : MonoBehaviour
     public void TriggerBossEntry()
     {
         bossEntryStory.gameObject.SetActive(true);
+    }
+
+    public void CheckForDefeatStory()
+    {
+        print(PlayerDataGetter.Instance.GetReadDataAtKey(PlayerConstants.BossDialogueTwo));
+        if (PlayerDataGetter.Instance.GetReadDataAtKey(PlayerConstants.BossDialogueTwo) == "Null")
+        {
+            print("WTF");
+            CheckEnding();
+        }
+        else
+        {
+            TriggerBossDefeat();
+            print("Boss trigger ending text");
+        }
     }
 
     public void CheckEnding()
@@ -94,7 +109,9 @@ public class BossManager : MonoBehaviour
 
     public void TriggerBossLeavingWithoutIdol()
     {
+        mobileControls.SetActive(false);
         PlayerController playerController = FindObjectOfType<PlayerController>();
+        playerController.isOverrideActive = true;
 
         /*boss.ForceMovementWithoutMovement(-1);
         bossTransform.DOMove(bossCollectArtifactTransform.position, 0.5f).SetEase(Ease.Linear).OnComplete(() =>
